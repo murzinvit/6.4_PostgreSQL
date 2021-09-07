@@ -14,6 +14,7 @@
 - вывода описания содержимого таблиц: `\d+ “table_name”` </br>
 - выхода из psql: `\q` </br>
 - справка: `\?` </br>
+- Документация по основным запросам: [shpargalka-po-osnovnym-komandam-postgresql](https://www.oslogic.ru/knowledge/598/shpargalka-po-osnovnym-komandam-postgresql/) </br>
 #### Задача 2: </br>
 1) Используя psql создайте БД test_database: `CREATE DATABASE test_database;`, `connect test_database` </br>
 2) Восстановить бэкап БД в test_database: `psql -h localhost -U user -d test_database -f test_dump.sql` (Исправить ошибки: `create user postgres;`) </br>
@@ -27,4 +28,9 @@
 ![Postgre_width](https://github.com/murzinvit/screen/blob/c2364650f668fcba913b4469fac34f6dde54941f/Postgres_avg_width_column.png) </br>
 Документация по [pg_stats](https://postgrespro.ru/docs/postgresql/9.4/planner-stats) </br>
 #### Задача 3: </br>
+1)Провести разбиение таблицы на 2 (шардировать на orders_1 - price>499 и orders_2 - price<=499): </br>
+- Горизонтальный шардинг — это разделение одной таблицы на разные сервера </br>
+- CREATE TABLE orders_1 ( CHECK ( price > 499) ) INHERITS (orders);
+- CREATE TABLE orders_2 ( CHECK (price<=499) ) INHERITS (orders);
+
 #### Задача 4: </br>
