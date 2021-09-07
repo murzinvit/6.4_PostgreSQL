@@ -3,7 +3,7 @@
 #### Задача 1: </br>
 1) Используя docker поднимите инстанс PostgreSQL (версию 13). Данные БД сохраните в volume: </br>
 - `docker pull postgres:latest` </br>
-- `docker run -d -e POSTGRES_PASSWORD=pass -e POSTGRES_USER=user -e POSTGRES_DB=netology -v /DATABASE/postgres-data:/var/lib/postgreql/data -v --name postgres_srv postgres` </br>
+- `docker run -d -e POSTGRES_PASSWORD=pass -e POSTGRES_USER=user -e POSTGRES_DB=netology -v /DATABASE/postgres-data:/var/lib/postgreql/data --name postgres_srv postgres` </br>
 2) Подключитесь к БД PostgreSQL используя psql: </br>
 - `psql -U user -W pass netology` </br>
 3) Найдите и приведите управляющие команды для: </br>
