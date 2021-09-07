@@ -24,7 +24,7 @@
 - Поля и столбцы таблицы pg_stats: `\dS pg_catalog.pg_stats` </br>
 - Вывод среднего значения элементов: `SELECT attname, avg_width FROM pg_stats WHERE tablename = 'orders';` </br>
 Вывод запроса: </br>
-![Postgre_width](https://github.com/murzinvit/screen/blob/c2364650f668fcba913b4469fac34f6dde54941f/Postgres_avg_width_column.png)
+![Postgre_width](https://github.com/murzinvit/screen/blob/c2364650f668fcba913b4469fac34f6dde54941f/Postgres_avg_width_column.png) </br>
 Документация по [pg_stats](https://postgrespro.ru/docs/postgresql/9.4/planner-stats) </br>
 #### Задача 3: </br>
 #### Задача 4: </br>
