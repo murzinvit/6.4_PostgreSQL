@@ -45,3 +45,6 @@
 Документация по шардингу таблиц и триггерам: [sharding_tables](https://postgrespro.ru/blog/pgsql/17770) </br>
 
 #### Задача 4: </br>
+1) Используя утилиту pg_dump создайте бекап БД test_database: </br>
+`pg_dump -U user -F c test_database > test_database.dump` </br>
+2) Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца title для таблиц test_database? </br>
