@@ -46,5 +46,5 @@
 
 #### Задача 4: </br>
 1) Используя утилиту pg_dump создайте бекап БД test_database: </br>
-`pg_dump -U user -F c test_database > test_database.dump` </br>
+`pg_dump -U user -F c test_database > [test_db.sql](https://github.com/murzinvit/6.4_PostgreSQL/blob/b84d5ba4f3229ea926dcca5ce0a7c8fbf5f1ae2b/test_db.sql)` </br>
 2) Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца title для таблиц test_database? </br>
