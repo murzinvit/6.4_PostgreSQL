@@ -5,14 +5,13 @@
 - `docker pull postgres:latest` </br>
 - `docker run -d -e POSTGRES_PASSWORD=pass -e POSTGRES_USER=user -e POSTGRES_DB=netology -v /DATABASE/postgres-data:/var/lib/postgreql/data --name postgres_srv postgres` </br>
 2) Подключитесь к БД PostgreSQL используя psql: </br>
-- `psql -U user -W pass netology` </br>
-- `su -l postgres`, `psql -U user template1` </br>
+- `psql -U user netology` (по умолчанию есть база template1, template0) </br>
 3) Найдите и приведите управляющие команды для: </br>
 - вывода списка БД: `\l` </br>
-- подключения к БД: `connect db_name` </br>
+- подключения к БД: `\connect db_name` </br>
 - вывода списка таблиц: `\dt` </br>
-- вывода описания содержимого таблиц: `\d+ “table_name”` </br>
-- выхода из psql: `\q` </br>
+- вывода описания(подробное) содержимого таблиц: `\d+ table_name` </br>
+- выхода из psql: `\q` либо `exit` </br>
 - справка: `\?` </br>
 - Документация по основным запросам: [shpargalka-po-osnovnym-komandam-postgresql](https://www.oslogic.ru/knowledge/598/shpargalka-po-osnovnym-komandam-postgresql/) </br>
 #### Задача 2: </br>
@@ -50,4 +49,5 @@
  [test_database.sql](https://github.com/murzinvit/6.4_PostgreSQL/blob/1175d09ff42fb5a54ba5811b42534326ad967c17/test_database.sql) </br>
 2) Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца title для таблиц test_database? </br>
   `title character varying(80) NOT NULL UNIQUE;` </br>
-  
+  `alter table only orders add unique (title);` </br>
+[screen](https://github.com/murzinvit/screen/blob/38a87be3ce8657ec19f12448f3a182c18c545ccd/Postrgres_title_unique.png) </br>
