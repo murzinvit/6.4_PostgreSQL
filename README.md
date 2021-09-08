@@ -48,6 +48,6 @@
 `pg_dump -U user -F c test_database > test_database.sql` </br>
  [test_database.sql](https://github.com/murzinvit/6.4_PostgreSQL/blob/1175d09ff42fb5a54ba5811b42534326ad967c17/test_database.sql) </br>
 2) Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца title для таблиц test_database? </br>
-  `title character varying(80) NOT NULL UNIQUE;` </br>
-  `alter table only orders add unique (title);` </br>
+- Добавить к полю price атрибут - uniquie </br> 
+- `alter table only orders add unique (title);` </br>
 ![screen](https://github.com/murzinvit/screen/blob/38a87be3ce8657ec19f12448f3a182c18c545ccd/Postrgres_title_unique.png) </br>
