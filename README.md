@@ -50,4 +50,4 @@
 2) Как бы вы доработали бэкап-файл, чтобы добавить уникальность значения столбца title для таблиц test_database? </br>
   `title character varying(80) NOT NULL UNIQUE;` </br>
   `alter table only orders add unique (title);` </br>
-[screen](https://github.com/murzinvit/screen/blob/38a87be3ce8657ec19f12448f3a182c18c545ccd/Postrgres_title_unique.png) </br>
+![screen](https://github.com/murzinvit/screen/blob/38a87be3ce8657ec19f12448f3a182c18c545ccd/Postrgres_title_unique.png) </br>
