@@ -31,9 +31,9 @@
 [https://postgrespro.ru/docs/](https://postgrespro.ru/docs/postgresql/10/ddl-partitioning) </br>
 1)Провести разбиение таблицы на 2 (шардировать на orders_1 - price>499 и orders_2 - price<=499): </br>
 - Горизонтальный шардинг — это разделение одной таблицы на разные сервера </br>
-- `CREATE TABLE orders_1 (licke orders including all) INHERITS (orders);` </br>
+- `CREATE TABLE orders_1 (like orders including all) INHERITS (orders);` </br>
 - `ALTER TABLE orders_1 add constraint check_price CHECK(price>499);` </br>
-- `CREATE TABLE orders_2 (licke orders including all) INHERITS (orders);` </br>
+- `CREATE TABLE orders_2 (like orders including all) INHERITS (orders);` </br>
 - `ALTER TABLE orders_2 add constraint check_price CHECK(price<=499);` </br>
 Далее нужно добавить функцию: </br>
 `create function check_price() returns trigger as $$ begin if new.price>499 then insert into orders_1 select new.*;` <br>
