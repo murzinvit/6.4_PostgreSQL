@@ -27,7 +27,8 @@
 ![Postgre_width](https://github.com/murzinvit/screen/blob/c2364650f668fcba913b4469fac34f6dde54941f/Postgres_avg_width_column.png) </br>
 Документация по [pg_stats](https://postgrespro.ru/docs/postgresql/9.4/planner-stats) </br>
 #### Задача 3: </br>
-Документация по секционированию: [https://postgrespro.ru/docs](https://postgrespro.ru/docs/postgresql/10/sql-createtable) </br>
+Документация по декларативному партиционированию: [https://postgrespro.ru/docs](https://postgrespro.ru/docs/postgresql/10/sql-createtable) </br>
+[https://postgrespro.ru/docs/](https://postgrespro.ru/docs/postgresql/10/ddl-partitioning) </br>
 1)Провести разбиение таблицы на 2 (шардировать на orders_1 - price>499 и orders_2 - price<=499): </br>
 - Горизонтальный шардинг — это разделение одной таблицы на разные сервера </br>
 - `CREATE TABLE orders_1 (licke orders including all) INHERITS (orders);` </br>
