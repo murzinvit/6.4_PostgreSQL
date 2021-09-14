@@ -53,3 +53,6 @@
 - Добавить к полю price атрибут - uniquie </br> 
 - `alter table only orders add unique (title);` </br>
 ![screen](https://github.com/murzinvit/screen/blob/38a87be3ce8657ec19f12448f3a182c18c545ccd/Postrgres_title_unique.png) </br>
+---------------------------------------------------
+Рабочие заметки: </br>
+create table tmp (id integer not null, title varying varchar(80), price integer default 0) partition by range (price);
