@@ -30,7 +30,7 @@
 Документация по декларативному партиционированию: [https://postgrespro.ru/docs](https://postgrespro.ru/docs/postgresql/10/sql-createtable) </br>
 [https://postgrespro.ru/docs/](https://postgrespro.ru/docs/postgresql/10/ddl-partitioning) </br>
 1)Провести разбиение таблицы на 2 (шардировать на orders_1 - price>499 и orders_2 - price<=499): </br>
-- Горизонтальный шардинг — это разделение одной таблицы на разные сервера </br>
+- Горизонтальное партиционирование в postgresql 9: </br>
 - `CREATE TABLE orders_1 (like orders including all) INHERITS (orders);` </br>
 - `ALTER TABLE orders_1 add constraint check_price CHECK(price>499);` </br>
 - `CREATE TABLE orders_2 (like orders including all) INHERITS (orders);` </br>
@@ -43,7 +43,13 @@
 `end; $$ language plpgsql;` </br>
 Далее нужно добавить триггер: </br>
 `create trigger price_check_ins before insert on orders for each row execute procedure check_price();` </br>
-Документация по шардингу таблиц и триггерам: [sharding_tables](https://postgrespro.ru/blog/pgsql/17770) </br>
+- Горизонтальное партиционирование в postgresql 10 и выше: </br>
+- `alter table orders rename to orders_old;` </br>
+- `create table orders (id serial, title character varying(80) NOT NULL, price integer default 0) partition by range (price);` </br>
+- `CREATE table orders_1 partition of orders for values from ('0') to ('499');` </br>
+- `CREATE table orders_2 partition of orders for values from ('499') to ('1000');` </br>
+- `insert into orders (title, price) select title, price from orders_old;` </br>
+Документация по шардингу таблиц и триггерам: [sharding_tables](https://postgrespro.ru/docs/postgresql/10/ddl-partitioning) </br>
 
 #### Задача 4: </br>
 1) Используя утилиту pg_dump создайте бекап БД test_database: </br>
