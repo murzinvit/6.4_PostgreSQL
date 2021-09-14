@@ -49,6 +49,7 @@
 - `CREATE table orders_1 partition of orders for values from ('0') to ('499');` </br>
 - `CREATE table orders_2 partition of orders for values from ('499') to ('1000');` </br>
 - `insert into orders (title, price) select title, price from orders_old;` </br>
+- `drop table orders_old;` </br>
 Документация по шардингу таблиц и триггерам: [sharding_tables](https://postgrespro.ru/docs/postgresql/10/ddl-partitioning) </br>
 
 #### Задача 4: </br>
