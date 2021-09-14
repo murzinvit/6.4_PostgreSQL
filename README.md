@@ -55,7 +55,10 @@
 ![screen](https://github.com/murzinvit/screen/blob/38a87be3ce8657ec19f12448f3a182c18c545ccd/Postrgres_title_unique.png) </br>
 ---------------------------------------------------
 Рабочие заметки: </br>
-`create table tmp (id serial, title character varying(80) NOT NULL, price integer default 0) partition by range (price);` </br>
-`insert into tmp (id, title, price) select * from orders;` </br>
 `alter table orders rename to orders_old;` </br>
+`create table orders (id serial, title character varying(80) NOT NULL, price integer default 0) partition by range (price);` </br>
+`CREATE table orders_1 partition of orders for values from ('0') to ('499');` </br>
+`CREATE table orders_2 partition of orders for values from ('499') to ('1000');` </br>
+`insert into orders (title, price) select title, price from orders_old;` </br>
+
 
