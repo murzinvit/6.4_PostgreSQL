@@ -15,7 +15,7 @@
 - справка: `\?` </br>
 - Документация по основным запросам: [shpargalka-po-osnovnym-komandam-postgresql](https://www.oslogic.ru/knowledge/598/shpargalka-po-osnovnym-komandam-postgresql/) </br>
 #### Задача 2: </br>
-1) Используя psql создайте БД test_database: `CREATE DATABASE test_database;`, `connect test_database` </br>
+1) Используя psql создайте БД test_database: `CREATE DATABASE test_database;` </br>
 2) Восстановить бэкап БД в test_database: `psql -h localhost -U user -d test_database -f test_dump.sql` (Исправить ошибки: `create user postgres;`) </br>
 3) Перейти в управляющую консоль psql внутри контейнера: `docker exec -it postgres_srv /bin/bash`, `psql -U user test_database` </br>
 4) Подключитесь к восстановленной БД и проведите операцию ANALYZE для сбора статистики по таблице: `analyze verbose orders;` </br>
